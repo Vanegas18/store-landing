@@ -1,0 +1,53 @@
+---
+import { Star } from 'lucide-astro'
+
+const testimonials = [
+  {
+    quote: 'Excelente calidad 🔥 La camiseta se siente premium y el envío llegó al día siguiente.',
+    name: 'Camila R.',
+    role: 'Cliente verificada',
+  },
+  {
+    quote: 'Entrega rápida y confiable. Pedí por WhatsApp y todo fue súper sencillo.',
+    name: 'Andrés M.',
+    role: 'Cliente verificado',
+  },
+  {
+    quote: 'Los diseños son justo lo que buscaba. Ya hice mi segundo pedido.',
+    name: 'Valentina S.',
+    role: 'Cliente verificada',
+  },
+]
+---
+
+<section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
+
+  <div class="mb-12 mt-16 text-center">
+    <span class="text-sm font-medium uppercase tracking-widest text-primary">
+      Lo que dicen
+    </span>
+    <h2 class="mt-3 font-heading text-4xl font-bold uppercase tracking-tight text-balance text-foreground md:text-5xl">
+      Clientes que confían
+    </h2>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-3 md:gap-6">
+    {testimonials.map((t) => (
+      <figure class="flex flex-col rounded-2xl border border-border bg-card p-6">
+        <div class="flex gap-1 text-primary">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star class="size-4 fill-current" />
+          ))}
+        </div>
+        <blockquote class="mt-4 flex-1 text-pretty leading-relaxed text-card-foreground">
+          {`"${t.quote}"`}
+        </blockquote>
+        <figcaption class="mt-5 border-t border-border pt-4">
+          <p class="font-semibold text-foreground">{t.name}</p>
+          <p class="text-sm text-muted-foreground">{t.role}</p>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+
+</section>

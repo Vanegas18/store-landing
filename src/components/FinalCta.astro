@@ -1,0 +1,30 @@
+---
+import WhatsAppIcon from '@/components/WhatsAppIcon.astro'
+import { waLink } from '@/lib/store'
+
+const buyUrl = waLink('Hola 👋 quiero comprar ahora.')
+---
+
+<section class="px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-4xl rounded-3xl border border-border bg-linear-to-b from-card to-background px-6 py-16 text-center md:py-20">
+
+    <h2 class="font-heading text-5xl font-bold uppercase tracking-tight text-balance text-foreground md:text-6xl lg:text-7xl">
+      Compra ahora
+    </h2>
+    <p class="mx-auto mt-5 max-w-md text-lg text-pretty text-muted-foreground">
+      Tu nuevo estilo está a un mensaje de distancia. Escríbenos y recibe tu
+      pedido sin complicaciones.
+    </p>
+
+    <a
+      href={buyUrl}
+      target="_blank"
+      rel="noreferrer"
+      class="mt-10 inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-10 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+    >
+      <WhatsAppIcon class="size-5" />
+      Escribir por WhatsApp
+    </a>
+
+  </div>
+</section>

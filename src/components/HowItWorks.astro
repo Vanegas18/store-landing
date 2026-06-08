@@ -1,0 +1,54 @@
+---
+const steps = [
+  {
+    n: '01',
+    title: 'Elige tu producto',
+    text: 'Explora la colección y encuentra la prenda perfecta para ti.',
+  },
+  {
+    n: '02',
+    title: 'Escríbenos por WhatsApp',
+    text: 'Toca el botón y confirma tu pedido en segundos, sin complicaciones.',
+  },
+  {
+    n: '03',
+    title: 'Recibe tu pedido',
+    text: 'Te lo enviamos a tu puerta. Rápido, seguro y confiable.',
+  },
+]
+---
+
+<section
+  id="como-funciona"
+  class="border-y border-border bg-card/40 px-6 py-20 md:py-28"
+>
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-14 text-center">
+      <span class="text-sm font-medium uppercase tracking-widest text-primary">
+        Simple y rápido
+      </span>
+      <h2 class="mt-3 font-heading text-4xl font-bold uppercase tracking-tight text-balance text-foreground md:text-5xl">
+        Cómo funciona
+      </h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3">
+      {steps.map((step, i) => (
+        <div class="relative">
+          <span class="font-heading text-6xl font-bold text-primary/20">
+            {step.n}
+          </span>
+          <h3 class="mt-2 font-heading text-2xl font-semibold uppercase tracking-wide text-foreground">
+            {step.title}
+          </h3>
+          <p class="mt-3 max-w-xs leading-relaxed text-muted-foreground">
+            {step.text}
+          </p>
+          {i < steps.length - 1 && (
+            <div class="absolute right-0 top-8 hidden h-px w-12 bg-border md:block" />
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

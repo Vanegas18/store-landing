@@ -1,0 +1,28 @@
+---
+const items = [
+  "Envío gratis hoy",
+  "Calidad premium",
+  "Compra por WhatsApp",
+  "Nueva colección 2026",
+  "Estilo moderno",
+  "Entrega en 24h",
+]
+---
+
+<div class="overflow-hidden border-y border-border bg-primary py-4">
+  <div class="flex w-max animate-marquee">
+    {[0, 1].map((dup) => (
+      <ul
+        class="flex shrink-0 items-center"
+        aria-hidden={dup === 1 ? "true" : undefined}
+      >
+        {items.map((item) => (
+          <li class="flex items-center gap-6 px-6 font-heading text-sm font-semibold uppercase tracking-widest text-primary-foreground">
+            {item}
+            <span class="text-primary-foreground/50">✦</span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>

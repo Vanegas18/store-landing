@@ -1,0 +1,53 @@
+---
+import { Truck, Sparkles, MessageCircle, Shirt } from 'lucide-astro'
+
+const benefits = [
+  {
+    icon: Truck,
+    title: 'Entrega rápida',
+    text: 'Envíos en 24-48h directo a tu puerta, con seguimiento incluido.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Materiales premium',
+    text: 'Telas seleccionadas para máxima comodidad y durabilidad.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Pedido por WhatsApp',
+    text: 'Sin formularios complicados. Escríbenos y listo.',
+  },
+  {
+    icon: Shirt,
+    title: 'Estilo moderno',
+    text: 'Diseños actuales y atemporales que siempre destacan.',
+  },
+]
+---
+
+<section id="beneficios" class="mx-auto max-w-7xl px-6 py-20 md:py-28">
+  <div class="mb-12 text-center">
+    <span class="text-sm font-medium uppercase tracking-widest text-primary">
+      Por qué elegirnos
+    </span>
+    <h2 class="mt-3 font-heading text-4xl font-bold uppercase tracking-tight text-balance text-foreground md:text-5xl">
+      Hecho para ti
+    </h2>
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+    {benefits.map((b) => (
+      <div class="rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
+        <div class="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <b.icon class="size-6" />
+        </div>
+        <h3 class="mt-5 font-heading text-xl font-semibold uppercase tracking-wide text-card-foreground">
+          {b.title}
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          {b.text}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

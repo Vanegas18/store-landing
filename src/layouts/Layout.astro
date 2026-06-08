@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'LUMEN — Ropa moderna, lista para ti',
+  description = 'Tienda de ropa moderna y streetwear premium. Descubre tu estilo y compra fácil por WhatsApp.',
+} = Astro.props;
+
+const isProd = import.meta.env.PROD;
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content="Astro" />
+    <title>{title}</title>
+
+    <link rel="icon" href="/icon-light-32x32.png" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/icon-dark-32x32.png" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/icon.png" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-icon.png" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background font-sans antialiased">
+    <slot />
+    {isProd && (
+      <script defer src="https://cdn.vercel-insights.com/v1/script.js" data-endpoint="/_vercel/insights/vitals"></script>
+    )}
+  </body>
+</html>
